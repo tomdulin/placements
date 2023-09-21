@@ -1,0 +1,108 @@
+@import "core/universal";
+.user_card {
+  height: 400px;
+  width: 350px;
+  color: $header-color;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  font-size: 1.3em;
+  &.extra-long {
+    height: 555px;
+  }
+}
+
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: $secondary-color;
+  padding: 10px;
+  text-align: center;
+}
+
+.brand_logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.nav_logo {
+  height: 2rem;
+  width: 5rem;
+}
+
+.form_container {
+  margin-top: 100px;
+}
+
+.login_btn {
+  width: 100%;
+  background: $primary-color;
+  letter-spacing: 0.1rem;
+  color: white !important;
+}
+
+.login_btn:hover {
+  background: var(--bs-red-highlight);
+}
+
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.login_container {
+  padding: 0 2rem;
+}
+
+.input-group-append {
+  display: flex !important;
+}
+
+.input-group-text {
+  background: $primary-color !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+  display: flex;
+}
+
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #c0392b !important;
+}
+
+.header-space {
+  margin: 12rem auto;
+}
+
+.devise-links {
+  padding: 1rem;
+}
+
+.dropdown-toggle .fa-user {
+  height: 1rem;
+}
+
+.nav-account-icon {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1.1rem !important;
+}

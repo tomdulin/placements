@@ -1,0 +1,54 @@
+	<div id="homeBottom"></div>
+
+	
+
+  <div class="devise-container h-100 header-space">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card extra-long bg-grey">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<%= image_tag(asset_path('no_logo.png'), class:"brand_logo", alt:"cross training") %>		
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form', data: { turbo: false }}) do |f| %>
+          	<%= render "devise/shared/error_messages", resource: resource %>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+							</div>
+         				<%= f.email_field :email, autofocus: true, required: true, class:"form-control input_user", placeholder: "email", required: 'required' %>
+								<%= inline_error_for(:email, resource) %>
+						</div>
+          
+            <div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
+							</div>
+               	<%= f.text_field :name,  required: true, class:"form-control input_user", placeholder: "name",  required: 'required' %>
+
+								<%= inline_error_for(:name, resource) %>
+						</div>
+
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+              	<%= f.password_field :password, required: true, autocomplete: "off", class:"form-control input_pass", placeholder: "password",  required: 'required' %>
+								<%= inline_error_for(:password, resource) %>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+              				<%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control input_pass", placeholder: "confirm password",  required: true %>
+						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<%= f.submit "Create Account",class: "btn  btn-primary" %>
+						</div>
+					<% end %>
+				</div>
+					<%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,29 @@
+<div id="homeBottom"></div>
+<div class="devise-container h-100 header-space">
+  
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card bg-grey">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <%= image_tag(asset_path('default.png'), class:"brand_logo", alt:"elevate northwest logo") %>		
+        </div>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            </div>
+              <%= f.email_field :email, autofocus: true,  class:"form-control input_user", placeholder: "Email Address" %>
+              <%= inline_error_for(:email, resource) %>
+          </div>
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <%= f.submit "Send password reset email",class: "btn  btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    <%= render "devise/shared/links" %>
+  
+    </div>
+  </div>
+</div>

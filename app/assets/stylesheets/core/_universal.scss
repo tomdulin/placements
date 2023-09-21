@@ -1,0 +1,23 @@
+:root {
+  --bs-primary: #005C5C;
+  --bs-secondary: #6c757d;
+  --bs-success: #005C5C;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc800;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+}
+
+////////////////
+$primary-color: var(--bs-primary);
+$secondary-color: #000;
+$header-color: #21312b;
+$header-link-color: var(--bs-teal-bg-text);
+$app-background: #f1f1f1;
+$orange-highlight: var(--bs-red-highlight);
+$table-alt-row: #f4f4f4;
+////////////////
+$app-header-height: 3.1em;
+$app-font-size: 13px;
+$app-width: 100%;
+////////////////

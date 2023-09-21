@@ -1,0 +1,24 @@
+
+  <div class="flex-shrink-0 p-3 bg-white mt-8">
+    <section class="page-section p-0 bg-light">
+      <div class="mx-auto w-1/2">
+        <div class="w-full max-w-2xl bg-gray-100 py-8 px-4 border border-gray-200 rounded shadow-sm" style="position: relative;">
+        <%= render partial: "/shared/filter_form", locals: { section_name: "verions", no_search: true }%>
+        <%= turbo_frame_tag "verions" do %>
+          <div class="table">
+            <div class="table-header-group">
+            <%= sort_link_to "Date", :created_at, class: "table-cell pr-4", data: { turbo_action: "advance" } %>
+              <p class ="table-cell pr-4 text-right">Name</p>
+              <p class ="table-cell pr-4 text-right">User</p>
+              <p class ="table-cell pr-4 text-right">From</p>
+              <p class ="table-cell pr-4 text-right">To</p>
+            </div>
+
+            <%= render versions %>
+          </div>
+          <%== pagy_bootstrap_nav @pagy %>
+        <% end %>
+          </div>
+        </div>
+      </section>
+    </div>

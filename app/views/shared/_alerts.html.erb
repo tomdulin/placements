@@ -1,0 +1,10 @@
+<% if notice %>
+  <p class="alert alert-top-buffer alert-success <%= notice.empty? ? '' : "visible" %>"><%= notice %>
+  <a href="#" class="close-button"> </a>
+  </p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-top-buffer alert-danger <%= alert.empty? ? '' : "visible" %>"><%= alert.html_safe %>
+    <a href="#" class="close-button"> </a>
+  </p>
+<% end %>

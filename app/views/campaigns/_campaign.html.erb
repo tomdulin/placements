@@ -1,0 +1,26 @@
+<div id="<%= dom_id campaign %>" class="table-row striped-row " style="width: 100%; padding-left: 3%">
+  <div class="table-cell py-3 ">
+    <%= campaign.name %>
+  </div>
+   <div class="table-cell py-3 ">
+    <%= campaign.line_items.count %>
+  </div>
+  <div class="table-cell py-3 ">
+      <%=link_to_invoice_viewable_for campaign%>
+  </div>
+  <div class="table-cell py-3 ">
+    <%=  number_to_currency campaign.adjustments %>
+  </div>
+  <div class="table-cell py-3 ">
+    <%= number_to_currency campaign.actual_amount %>
+  </div>
+  <div class="table-cell py-3 ">
+    <%= number_to_currency campaign.billable_amount %>
+  </div>
+  <div class="table-cell py-3 ">
+    <%= link_to_create_invoice(campaign) %>
+    <%#= link_to_if campaign.selectable?, 
+        "<i class='fa fa-plus-square' aria-hidden='true'></i>".html_safe,
+       new_invoice_path(campaign_id: campaign), data: { turbo_frame: "_top" } %>
+  </div>
+</div>

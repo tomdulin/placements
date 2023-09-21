@@ -1,0 +1,36 @@
+  <div class="devise-container container h-100 header-space ">
+    
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card bg-grey">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<%= image_tag(asset_path('default.png'), class:"brand_logo", alt:"elevate northwest logo") %>		
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    				<%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+              <%= f.password_field :password, autofocus: true, autocomplete: "off", class:"form-control input_pass", placeholder: "password" %>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control input_pass", placeholder: "confirm password" %>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+                <%= f.submit "Change my password",class: "btn btn-primary" %>
+            </div>
+					<% end %>
+				</div>
+		
+			
+        <%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>

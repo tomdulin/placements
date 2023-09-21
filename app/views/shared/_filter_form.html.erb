@@ -1,0 +1,22 @@
+<%= form_with url: "", method: :get, data: { turbo_frame: section_name, turbo_action: "advance" } do |form| %>
+
+  <div class="search-field-container-box">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Rows Per Page</span>
+      </div>
+      <%= form.select :count, options_for_row_selection(params[:count]), {}, { onchange: "this.form.requestSubmit()" } %>
+    </div>
+</div>
+
+ <div class="center-button ">
+    
+ </div>
+  <div class="input-group mb-3 search-field">
+    <div class="input-group-prepend" >
+      <span class="input-group-text" id="basic-addon1" style="display:inline-table; margin-top:1px"><i class="fas fa-search"></i></span>
+    </div>
+    <%= form.search_field :query, value: params[:query], placeholder: "search", oninput: "this.form.requestSubmit()", class: "form-control" %>
+  </div>
+  
+<% end %>

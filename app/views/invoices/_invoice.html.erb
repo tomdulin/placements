@@ -1,0 +1,16 @@
+<div id="<%= dom_id invoice %>" class="table-row striped-row " style="width: 100%; padding-left: 3%">
+  <div class="table-cell py-3 ">
+    <%= link_to invoice.number, invoice_line_items_path(invoice), data: { turbo_frame: "_top" } %>
+  </div>
+
+  <div class="table-cell py-3 ">
+    <%=  invoice.campaign.name %>
+  </div>
+  <div class="table-cell py-3 ">
+    <%=  invoice.campaign.line_items.count %>
+  </div>
+
+  <div class="table-cell py-3 ">
+    <%= number_to_currency invoice.grand_total %>
+  </div>
+</div>

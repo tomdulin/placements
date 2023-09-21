@@ -1,0 +1,10 @@
+<section class="page-section bg-light">
+  <%= render partial: '/invoices/header', locals: { invoice: @invoice } %>
+
+  <main class="d-flex flex-nowrap">
+    <%= render partial: '/invoices/sidebar' %>
+    <div class="w-100 d-flexalign-items-stretch bg-white" >
+      <%= render partial: "index", locals: { line_items: @line_items } %>
+    </div>
+  </main>
+</section>

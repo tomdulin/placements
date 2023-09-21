@@ -1,0 +1,21 @@
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.font-size {
+  &_2 {
+    font-size: 2rem;
+  }
+}

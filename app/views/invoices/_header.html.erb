@@ -1,0 +1,11 @@
+<div class="container-fluid pb-3">
+  <div class="d-grid gap-3 p-2" style="grid-template-columns: 5fr 1fr;">
+    <div class="bg-light ">
+        <h3 class="section-heading text-uppercase align-middle center-header p-1 fs-4"><%= invoice.campaign.name %></h3>
+    </div>
+    <div class="bg-light border rounded-3 p-1">
+      <%= render partial: '/shared/key_value_row', locals: {key: "Invoice:", value: invoice.number }%>
+      <%= render partial: '/shared/key_value_row', locals: {key: "Total:", value: number_to_currency(invoice.grand_total)}%>
+      <%= render partial: '/shared/key_value_row', locals: {key: "Items:", value: invoice.line_items.count }%>
+  </div>
+</div>

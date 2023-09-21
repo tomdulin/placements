@@ -1,0 +1,18 @@
+<div id="<%= dom_id version %>" class="table-row striped-row " style="width: 100%; padding-left: 3%">
+  <div class="table-cell py-3">
+    <%= version.created_at.localtime.strftime('%m/%d/%Y %I:%M %p') %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%=   get_name_of version %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%=   version.whodunnit %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%= changed_value_from(version) %>
+  </div>
+
+  <div class="table-cell py-3 text-right">
+    <%= changed_value_to(version) %>
+  </div>
+</div>

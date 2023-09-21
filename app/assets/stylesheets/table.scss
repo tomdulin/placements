@@ -1,0 +1,79 @@
+@import "core/universal";
+
+table thead {
+  font-weight: bold;
+  background-color: rgb(191, 191, 191);
+}
+
+table th,
+table td {
+  padding: 0 6px;
+  text-align: center;
+}
+/* CSS TABLE STYLES */
+
+.table {
+  display: table;
+}
+
+.btn-primary {
+  background-color: $primary-color !important;
+}
+
+.table-header-group {
+  display: table-header-group;
+  font-weight: bold;
+  background-color: rgb(191, 191, 191);
+  background-color: $primary-color;
+  color: white;
+  a, p {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--bs-warning);
+  }
+
+  line-height: 3rem;
+
+}
+
+.css-table-body {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell,
+.css-table-header div,
+.css-table-row div {
+  display: table-cell;
+  padding: 0 6px;
+  
+  a {
+    text-decoration: none;
+  }
+}
+
+.css-table-header div {
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.striped-row:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.striped-row {
+  &.highlight {
+    background-color: rgba(41, 92, 92, .3) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .table-responsive-shrink {
+    font-size: 10px;
+  }
+}

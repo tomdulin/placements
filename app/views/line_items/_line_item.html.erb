@@ -1,0 +1,22 @@
+<div id="<%= dom_id line_item %>" class="table-row striped-row w-100" style="width: 100%; padding-left: 3%">
+  <div class="table-cell py-3">
+    <%= line_item.name %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%=  number_to_currency line_item.booked_amount %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%= number_to_currency line_item.actual_amount %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%= number_to_currency line_item.billable_amount %>
+  </div>
+  <div class="table-cell py-3 text-right">
+    <%= form_with(model: [@invoice, line_item],  data: { turbo: false }) do |form| %>
+      <% FILTER_PARAMS.each do |parameter| %>
+        <%= conditional_filter_persisted(parameter) %>
+      <% end %>
+      <%= form.number_field :adjustments, step: :any, required: true %>
+     <% end %>
+  </div>
+</div>

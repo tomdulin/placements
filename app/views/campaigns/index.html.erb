@@ -1,0 +1,51 @@
+<section class="page-section bg-light">
+  <div class="flex-shrink-0 p-3 bg-white mt-8">
+    <section class="page-section p-0 bg-light">
+      <div class="mx-auto w-1/2">
+        <div class="w-full max-w-2xl bg-gray-100 py-8 px-4 border border-gray-200 rounded shadow-sm" style="position: relative;">
+        <%= form_with url: "", method: :get, data: { turbo_frame: "campaigns", turbo_action: "advance" } do |form| %>
+
+          <div class="search-field-container-box">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Rows Per Page</span>
+              </div>
+              <%= form.select :count, options_for_row_selection(params[:count]), {}, { onchange: "this.form.requestSubmit()" } %>
+            </div>
+        </div>
+
+         <div class="center-button form-check form-switch">
+            <%= form.hidden_field :selectable, value: @selectable ? 1 : 0%>
+            <%#= form.check_box :selectable,  class: "form-check-input", checked_value: 1,  onclick: "this.form.requestSubmit()"   %>
+            <%#= form.label :selectable, 'Show only selectable campaigns', class: "form-check-label" %>
+         </div>
+          <div class="input-group mb-3 search-field">
+            <div class="input-group-prepend" >
+              <span class="input-group-text" id="basic-addon1" style="display:inline-table; margin-top:1px"><i class="fas fa-search"></i></span>
+            </div>
+            <%= form.search_field :query, value: params[:query], placeholder: "search", oninput: "this.form.requestSubmit()", class: "form-control" %>
+          </div>
+          
+        <% end %>
+
+        <%= turbo_frame_tag "campaigns" do %>
+          <div class="table">
+            <div class="table-header-group">
+              <%= sort_link_to "name", :name, class: "table-cell pr-4", data: { turbo_action: "advance" } %>
+              <p class="table-cell pr-4"># items</p>
+              <p class="table-cell pr-4">invoice</p>
+              <%= sort_link_to "actual_amount", :actual_amount, class: "table-cell pr-4", data: { turbo_action: "advance" } %>
+              <%= sort_link_to "adjustments", :adjustments, class: "table-cell pr-4", data: { turbo_action: "advance" } %>
+              <p class="table-cell pr-4">Sub Total</p>
+              <p class="table-cell pr-4"></p>
+            </div>
+
+            <%= render @campaigns %>
+          </div>
+          <%== pagy_bootstrap_nav @pagy %>
+        <% end %>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>

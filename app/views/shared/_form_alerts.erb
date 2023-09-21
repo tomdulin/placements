@@ -1,0 +1,19 @@
+<% if form.object.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show mb-6" role="alert">
+    <div class="flex items-start justify-start">
+    <button type="button" class="close-button" data-dismiss="alert" aria-label="Close">
+       <%= image_tag(asset_path('close-icon.svg'),  alt:"close errors") %>
+    </button>
+      <div>
+        <h4 class="font-black text-sm uppercase tracking hidden">
+          <%= pluralize(form.object.errors.count, "error") %> prohibited this item from being saved:
+        </h4>
+        <ul>
+          <% form.object.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
